@@ -55,6 +55,15 @@ h2 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;c
 .sample-card h3{font-size:16px}
 .sample-card p{font-size:13.5px;color:var(--gray);margin-top:4px}
 .note{text-align:center;color:var(--gray);font-size:13px;margin-top:28px}
+/* before-after */
+.before{display:flex;align-items:center;gap:10px;margin-top:12px}
+.before img{width:52px;height:52px;object-fit:cover;border-radius:10px;aspect-ratio:auto}
+.before span{font-size:12px;color:var(--gray);line-height:1.5}
+/* compare */
+.cmp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.anchor{font-size:13px;color:var(--accent);font-weight:700;text-align:center;margin:-6px 0 18px}
+.who{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:36px}
+.who span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 20px;font-size:14px}
 /* difference */
 .diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px}
 .diff-card{border:1px solid var(--line);border-radius:18px;padding:34px 32px;background:#fff}
@@ -106,7 +115,7 @@ footer{padding:36px 0;text-align:center;color:var(--gray);font-size:13px}
   .hero-grid{grid-template-columns:1fr;gap:36px}
   .hero h1{font-size:36px}
   .sample-grid{grid-template-columns:1fr 1fr;gap:16px}
-  .diff-grid,.price-grid{grid-template-columns:1fr}
+  .diff-grid,.price-grid,.cmp-grid{grid-template-columns:1fr}
   .step-grid{grid-template-columns:1fr 1fr;gap:14px}
 }
 @media(max-width:520px){.sample-grid,.step-grid{grid-template-columns:1fr}}
@@ -126,13 +135,13 @@ footer{padding:36px 0;text-align:center;color:var(--gray);font-size:13px}
       <div class="eyebrow left" style="color:#e8b4a0">Magazine Cover Service</div>
       <div class="underline left"></div>
       <h1>写真1枚で、<br>あなたが雑誌の<br><span class="g">表紙</span>になる。</h1>
-      <p>スマホで撮った写真を送るだけ。あなたの仕事や想いを、一枚の表紙に仕上げます。パソコンも、AIの知識もいりません。難しいことは、すべてこちらで。</p>
+      <p>あなたがやることは、スマホで写真を1枚送るだけ。あなたの仕事や想いを、一枚の表紙に仕上げます。パソコンも、AIの知識もいりません。難しいことは、すべてこちらで。</p>
       <div class="hero-cta">
         <a class="btn btn-main" href="https://docs.google.com/forms/d/e/1FAIpQLSfbwPeRzJfNkA_pz0ioiTk7EYZCAVoRFzUD9Z9ynBDdlcP6Bw/viewform" target="_blank" rel="noopener">写真を送って申し込む</a>
         <a class="btn btn-ghost" href="#samples">サンプルを見る</a>
       </div>
       <div class="hero-points">
-        <span>文字は一字一句正確</span><span>修正2回まで無料</span><span>最短3日で納品</span>
+        <span>文字は一字一句正確</span><span>修正2回まで無料</span><span>最短3日で納品</span><span>デザイン案を見てから判断できます</span>
       </div>
     </div>
     <div class="hero-card">
@@ -149,10 +158,10 @@ footer{padding:36px 0;text-align:center;color:var(--gray);font-size:13px}
     <h2>どんな仕事の人も、<br><span class="g">表紙の主役</span>になれます</h2>
     <p class="lead-c">お店のオーナー、講師、職人さん。仕事の現場で撮った、いつもの一枚から作ります。誌名も、見出しの言葉も、あなたに合わせて考えます。</p>
     <div class="sample-grid">
-      <div class="sample-card"><img src="images/sample1.jpg" alt="ワインサロン店主の表紙サンプル"><div><h3>ワインサロン店主・60代</h3><p>「花束を買うように、ワインを買う」お店の想いを、そのまま表紙の言葉に。</p></div></div>
-      <div class="sample-card"><img src="images/sample2.jpg" alt="美容サロンオーナーの表紙サンプル"><div><h3>美容サロンオーナー・40代</h3><p>プロフィールやお店のSNSに。第一印象が変わる一枚に。</p></div></div>
-      <div class="sample-card"><img src="images/sample3.jpg" alt="講師・コーチの表紙サンプル"><div><h3>講師・コーチ・50代</h3><p>講座やセミナーの案内に。経験と人柄が伝わる表紙です。</p></div></div>
-      <div class="sample-card"><img src="images/sample4.jpg" alt="ベーカリー店主の表紙サンプル"><div><h3>ベーカリー店主・30代</h3><p>店頭ポスターやチラシにも使える、温かい一枚に。</p></div></div>
+      <div class="sample-card"><img src="images/sample1.jpg" alt="ワインサロン店主の表紙サンプル"><div><h3>ワインサロン店主・60代</h3><p>「花束を買うように、ワインを買う」お店の想いを、そのまま表紙の言葉に。</p><div class="before"><img src="images/before1.jpg" alt="表紙にする前の元の写真"><span>元の写真は、こんな何気ない一枚です</span></div></div></div>
+      <div class="sample-card"><img src="images/sample2.jpg" alt="美容サロンオーナーの表紙サンプル"><div><h3>美容サロンオーナー・40代</h3><p>プロフィールやお店のSNSに。第一印象が変わる一枚に。</p><div class="before"><img src="images/before2.jpg" alt="表紙にする前の元の写真"><span>元の写真は、こんな何気ない一枚です</span></div></div></div>
+      <div class="sample-card"><img src="images/sample3.jpg" alt="講師・コーチの表紙サンプル"><div><h3>講師・コーチ・50代</h3><p>講座やセミナーの案内に。経験と人柄が伝わる表紙です。</p><div class="before"><img src="images/before3.jpg" alt="表紙にする前の元の写真"><span>元の写真は、こんな何気ない一枚です</span></div></div></div>
+      <div class="sample-card"><img src="images/sample4.jpg" alt="ベーカリー店主の表紙サンプル"><div><h3>ベーカリー店主・30代</h3><p>店頭ポスターやチラシにも使える、温かい一枚に。</p><div class="before"><img src="images/before4.jpg" alt="表紙にする前の元の写真"><span>元の写真は、こんな何気ない一枚です</span></div></div></div>
     </div>
     <p class="note">※サンプルはモデル写真で制作したイメージです。実際は、あなたご自身の写真からお作りします。</p>
   </div>
@@ -187,6 +196,42 @@ footer{padding:36px 0;text-align:center;color:var(--gray);font-size:13px}
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Compare</div>
+    <div class="underline"></div>
+    <h2>ほかの方法と、<span class="g">比べて</span>ください</h2>
+    <p class="lead-c">「ちゃんとした一枚」を作る方法は、ほかにもあります。手間と仕上がりの違いを、そのまま比べられるようにしました。</p>
+    <div class="cmp-grid">
+      <div class="diff-card">
+        <h3>写真館で撮る</h3>
+        <ul>
+          <li>スタジオに出向いて撮影する手間がかかります</li>
+          <li>撮影料に加えて、デザインや文字入れは別途になりがちです</li>
+          <li>撮り直しは基本的にできません</li>
+        </ul>
+      </div>
+      <div class="diff-card">
+        <h3>テンプレを買って自作</h3>
+        <ul>
+          <li>雑誌風テンプレートは、編集も印刷の入稿も自分でやる必要があります</li>
+          <li>パソコン操作に慣れていないと、仕上げに時間がかかります</li>
+          <li>表紙の言葉も、自分で考える必要があります</li>
+        </ul>
+      </div>
+      <div class="diff-card ours">
+        <h3>表紙のあなた</h3>
+        <ul>
+          <li>スマホで写真を1枚送るだけ。編集作業はゼロです</li>
+          <li>表紙の言葉は、こちらからご提案します</li>
+          <li>顔は作り替えないので、あなたそのままの仕上がりです</li>
+          <li>単品2,980円から。追加料金はありません</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="steps">
   <div class="wrap">
     <div class="eyebrow" style="color:#e8b4a0">How It Works</div>
@@ -202,33 +247,47 @@ footer{padding:36px 0;text-align:center;color:var(--gray);font-size:13px}
   </div>
 </section>
 
+<section style="padding-bottom:0">
+  <div class="wrap">
+    <div class="eyebrow">For You</div>
+    <div class="underline"></div>
+    <h2>こんな方のための、<span class="g">サービス</span>です</h2>
+    <div class="who">
+      <span>ワインサロン・飲食店の店主</span><span>美容サロン・ネイルのオーナー</span><span>講師・コーチ・コンサルタント</span><span>パン屋・カフェなど個人店の店主</span><span>士業・職人さん</span>
+    </div>
+    <p class="note">「AIはよく分からないけれど、ちゃんとした一枚がほしい」——そんな方にこそ向いています。</p>
+  </div>
+</section>
+
 <section id="pricing">
   <div class="wrap">
     <div class="eyebrow">Pricing</div>
     <div class="underline"></div>
     <h2>料金は、<span class="g">3つ</span>だけ</h2>
-    <p class="lead-c">追加料金はかかりません。お支払い確認後に制作を始めます。</p>
+    <p class="lead-c">たくさんの方に使ってほしいので、価格は抑えました。追加料金はかかりません。お支払い確認後に制作を始めます。</p>
     <div class="price-grid">
       <div class="price-card">
         <h3>単品プラン</h3>
-        <div class="price"><b>4,980</b> <small>円（税込）</small></div>
+        <div class="price"><b>2,980</b> <small>円（税込）</small></div>
         <ul><li>雑誌表紙風画像 1枚</li><li>デザイン案 4つから選択</li><li>修正 2回まで無料</li><li>SNS用データ＋印刷用PDF</li></ul>
         <a class="btn btn-dark" href="https://docs.google.com/forms/d/e/1FAIpQLSfbwPeRzJfNkA_pz0ioiTk7EYZCAVoRFzUD9Z9ynBDdlcP6Bw/viewform" target="_blank" rel="noopener">このプランで申し込む</a>
       </div>
       <div class="price-card push">
         <div class="badge">いちばん人気</div>
         <h3>3点セット</h3>
-        <div class="price"><b>9,800</b> <small>円（税込）</small></div>
+        <div class="price"><b>5,980</b> <small>円（税込）</small></div>
         <ul><li>雑誌表紙風画像 1枚</li><li>表紙デザインの名刺データ</li><li>SNS投稿画像 3枚</li><li>デザイン案 4つから選択</li><li>修正 2回まで無料</li></ul>
+        <p class="anchor">別々に頼むと合計7,980円の内容が、セットで5,980円</p>
         <a class="btn btn-main" href="https://docs.google.com/forms/d/e/1FAIpQLSfbwPeRzJfNkA_pz0ioiTk7EYZCAVoRFzUD9Z9ynBDdlcP6Bw/viewform" target="_blank" rel="noopener">このプランで申し込む</a>
       </div>
       <div class="price-card">
         <h3>月額プラン</h3>
-        <div class="price"><b>19,800</b> <small>円（税込）／月</small></div>
-        <ul><li>毎月 SNS投稿画像 8枚</li><li>表紙デザインの世界観で統一</li><li>季節のキャンペーン画像にも対応</li><li>いつでも解約できます</li></ul>
+        <div class="price"><b>9,800</b> <small>円（税込）／月</small></div>
+        <ul><li>毎月 SNS投稿画像 8枚</li><li>1枚あたり1,225円の計算です</li><li>表紙デザインの世界観で統一</li><li>季節のキャンペーン画像にも対応</li><li>いつでも解約できます</li></ul>
         <a class="btn btn-dark" href="https://docs.google.com/forms/d/e/1FAIpQLSfbwPeRzJfNkA_pz0ioiTk7EYZCAVoRFzUD9Z9ynBDdlcP6Bw/viewform" target="_blank" rel="noopener">このプランで申し込む</a>
       </div>
     </div>
+    <p class="note">まず4つのデザイン案から選んでいただく作り方なので、修正は仕上げの微調整が中心です。だから、2回までで十分に収まります。</p>
   </div>
 </section>
 
@@ -244,6 +303,11 @@ footer{padding:36px 0;text-align:center;color:var(--gray);font-size:13px}
       <div class="faq-item"><h3>納品までどのくらいかかりますか？</h3><p>写真とお支払いの確認後、最短3日、通常5日ほどでデザイン案をお見せします。</p></div>
       <div class="faq-item"><h3>印刷もお願いできますか？</h3><p>印刷できるPDFデータをお渡ししますので、お近くの印刷サービスで印刷できます。名刺やポスターのサイズ指定もご相談ください。</p></div>
       <div class="faq-item"><h3>支払い方法を教えてください。</h3><p>お申し込み後にメールでご案内します。銀行振込をご用意しています。</p></div>
+      <div class="faq-item"><h3>どんな写真を送ればいいですか？</h3><p>明るい場所で、顔がはっきり大きく写っているものがおすすめです。迷ったら何枚か送っていただければ、表紙向きの一枚をこちらで選びます。送り方は、お申し込み後にメールでご案内します。</p></div>
+      <div class="faq-item"><h3>別人みたいになったりしませんか？</h3><p>しません。顔は元の写真のまま作り替えず、周りのデザインだけを仕上げます。「AIで作った感」が出ないのは、そのためです。</p></div>
+      <div class="faq-item"><h3>店名やキャッチコピーの文字が間違っていたら？</h3><p>文字はAIに描かせるのではなく、デザインとして後から組み立てるので、一字一句正確です。デザイン案をお見せする段階で、文字の確認もしていただけます。</p></div>
+      <div class="faq-item"><h3>商用利用はできますか？</h3><p>できます。お店やサービスの宣伝に、そのままお使いください。SNS、名刺、チラシ、店頭ポスターにも使えます。</p></div>
+      <div class="faq-item"><h3>自分の写真がサンプルに使われることはありますか？</h3><p>ありません。制作事例として掲載するのは、許可をいただいた場合だけです。</p></div>
     </div>
   </div>
 </section>
