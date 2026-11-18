@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>表紙のあなた｜写真1枚で、あなたが雑誌の表紙に</title>
+<meta name="description" content="スマホの写真1枚を送るだけ。あなたが表紙を飾る、世界にひとつの雑誌表紙風画像をお作りします。AIやパソコンが苦手でも大丈夫。文字は一字一句正確に、写真はあなたそのままに。">
+<style>
+:root{
+  --ink:#1c1917; --gray:#5b5560; --line:#e8e2ea; --bg-soft:#f7f5f8;
+  --dark:#160b10; --dark2:#221118;
+  --grad:linear-gradient(90deg,#7a1e2b,#b3543f 55%,#c5a880);
+  --accent:#7a1e2b;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);line-height:1.85;font-size:16px;background:#fff}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:50}
+.header-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-weight:700;font-size:21px;letter-spacing:.06em}
+.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-block;border-radius:999px;padding:13px 32px;font-weight:700;text-decoration:none;font-size:15px}
+.btn-main{background:var(--grad);color:#fff;box-shadow:0 10px 24px rgba(122,30,43,.25)}
+.btn-ghost{border:1.5px solid #fff;color:#fff}
+.btn-dark{border:1.5px solid var(--ink);color:var(--ink)}
+header .btn{padding:9px 24px;font-size:14px}
+section{padding:96px 0}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;text-align:center}
+.eyebrow.left{text-align:left}
+.underline{width:44px;height:4px;border-radius:2px;background:var(--grad);margin:14px auto 0}
+.underline.left{margin-left:0}
+h2{font-size:38px;line-height:1.45;text-align:center;margin-top:20px;font-weight:800;letter-spacing:.01em}
+h2 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead-c{text-align:center;color:var(--gray);max-width:680px;margin:20px auto 0}
+/* hero */
+.hero{background:var(--dark);color:#fff;padding:84px 0 96px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:50px;line-height:1.35;font-weight:800;margin-top:22px}
+.hero h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:#d8cfd4;margin-top:24px;font-size:17px}
+.hero-cta{margin-top:36px;display:flex;gap:16px;flex-wrap:wrap}
+.hero-points{margin-top:28px;display:flex;gap:10px;flex-wrap:wrap}
+.hero-points span{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 16px;font-size:13px;color:#efe8eb}
+.hero-card{background:#fff;border-radius:20px;padding:14px;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.hero-card img{border-radius:12px}
+.hero-card p{color:var(--gray);font-size:13px;text-align:center;margin:10px 0 4px}
+/* samples */
+.samples{background:var(--bg-soft)}
+.sample-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:52px}
+.sample-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 10px 28px rgba(28,20,40,.06)}
+.sample-card img{aspect-ratio:2/3;object-fit:cover}
+.sample-card div{padding:16px 18px 20px}
+.sample-card h3{font-size:16px}
+.sample-card p{font-size:13.5px;color:var(--gray);margin-top:4px}
+.note{text-align:center;color:var(--gray);font-size:13px;margin-top:28px}
+/* difference */
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px}
+.diff-card{border:1px solid var(--line);border-radius:18px;padding:34px 32px;background:#fff}
+.diff-card.ours{border:2px solid var(--accent);box-shadow:0 16px 36px rgba(122,30,43,.12)}
+.diff-card h3{font-size:19px;margin-bottom:16px}
+.diff-card ul{list-style:none}
+.diff-card li{padding:9px 0 9px 30px;position:relative;color:var(--gray);font-size:15px}
+.diff-card li::before{content:"—";position:absolute;left:4px;color:#b9aebc}
+.diff-card.ours li{color:var(--ink)}
+.diff-card.ours li::before{content:"✓";color:var(--accent);font-weight:800}
+/* steps */
+.steps{background:var(--dark);color:#fff}
+.steps h2{color:#fff}
+.steps .lead-c{color:#cbbfc5}
+.step-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:52px}
+.step-card{background:var(--dark2);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:30px 26px}
+.step-num{font-weight:800;font-size:14px;letter-spacing:.14em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.step-card h3{font-size:18px;margin:12px 0 8px}
+.step-card p{font-size:14px;color:#cbbfc5}
+/* pricing */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;align-items:stretch}
+.price-card{border:1px solid var(--line);border-radius:20px;padding:38px 30px;background:#fff;display:flex;flex-direction:column;position:relative}
+.price-card.push{border:2px solid var(--accent);box-shadow:0 20px 44px rgba(122,30,43,.14)}
+.badge{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:13px;font-weight:800;border-radius:999px;padding:5px 20px;white-space:nowrap}
+.price-card h3{font-size:18px;text-align:center}
+.price{text-align:center;margin:16px 0 6px}
+.price b{font-size:46px;font-weight:800}
+.price small{color:var(--gray)}
+.price-card ul{list-style:none;margin:18px 0 26px;flex:1}
+.price-card li{padding:7px 0 7px 28px;position:relative;font-size:14.5px;color:var(--gray)}
+.price-card li::before{content:"✓";position:absolute;left:2px;color:var(--accent);font-weight:800}
+.price-card .btn{text-align:center}
+/* faq */
+.faq{background:var(--bg-soft)}
+.faq-list{max-width:760px;margin:48px auto 0}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 28px;margin-bottom:14px}
+.faq-item h3{font-size:16px}
+.faq-item h3::before{content:"Q. ";color:var(--accent);font-weight:800}
+.faq-item p{color:var(--gray);font-size:14.5px;margin-top:8px}
+/* final */
+.final{background:var(--dark);color:#fff;text-align:center}
+.final h2{color:#fff}
+.final p{color:#cbbfc5;margin:18px auto 34px;max-width:560px}
+footer{padding:36px 0;text-align:center;color:var(--gray);font-size:13px}
+@media(max-width:860px){
+  section{padding:64px 0}
+  h2{font-size:29px}
+  .hero{padding:56px 0 64px}
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero h1{font-size:36px}
+  .sample-grid{grid-template-columns:1fr 1fr;gap:16px}
+  .diff-grid,.price-grid{grid-template-columns:1fr}
+  .step-grid{grid-template-columns:1fr 1fr;gap:14px}
+}
+@media(max-width:520px){.sample-grid,.step-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap header-in">
+    <div class="logo">表紙の<span>あなた</span></div>
+    <a class="btn btn-main" href="https://docs.google.com/forms/d/e/1FAIpQLSfbwPeRzJfNkA_pz0ioiTk7EYZCAVoRFzUD9Z9ynBDdlcP6Bw/viewform" target="_blank" rel="noopener">申し込む</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow left" style="color:#e8b4a0">Magazine Cover Service</div>
+      <div class="underline left"></div>
+      <h1>写真1枚で、<br>あなたが雑誌の<br><span class="g">表紙</span>になる。</h1>
+      <p>スマホで撮った写真を送るだけ。あなたの仕事や想いを、一枚の表紙に仕上げます。パソコンも、AIの知識もいりません。難しいことは、すべてこちらで。</p>
+      <div class="hero-cta">
+        <a class="btn btn-main" href="https://docs.google.com/forms/d/e/1FAIpQLSfbwPeRzJfNkA_pz0ioiTk7EYZCAVoRFzUD9Z9ynBDdlcP6Bw/viewform" target="_blank" rel="noopener">写真を送って申し込む</a>
+        <a class="btn btn-ghost" href="#samples">サンプルを見る</a>
+      </div>
+      <div class="hero-points">
+        <span>文字は一字一句正確</span><span>修正2回まで無料</span><span>最短3日で納品</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="images/sample1.jpg" alt="ワインサロン店主の雑誌表紙サンプル">
+      <p>サンプル｜ワインサロン店主の表紙</p>
+    </div>
+  </div>
+</div>
+
+<section id="samples" class="samples">
+  <div class="wrap">
+    <div class="eyebrow">Samples</div>
+    <div class="underline"></div>
+    <h2>どんな仕事の人も、<br><span class="g">表紙の主役</span>になれます</h2>
+    <p class="lead-c">お店のオーナー、講師、職人さん。仕事の現場で撮った、いつもの一枚から作ります。誌名も、見出しの言葉も、あなたに合わせて考えます。</p>
+    <div class="sample-grid">
+      <div class="sample-card"><img src="images/sample1.jpg" alt="ワインサロン店主の表紙サンプル"><div><h3>ワインサロン店主・60代</h3><p>「花束を買うように、ワインを買う」お店の想いを、そのまま表紙の言葉に。</p></div></div>
+      <div class="sample-card"><img src="images/sample2.jpg" alt="美容サロンオーナーの表紙サンプル"><div><h3>美容サロンオーナー・40代</h3><p>プロフィールやお店のSNSに。第一印象が変わる一枚に。</p></div></div>
+      <div class="sample-card"><img src="images/sample3.jpg" alt="講師・コーチの表紙サンプル"><div><h3>講師・コーチ・50代</h3><p>講座やセミナーの案内に。経験と人柄が伝わる表紙です。</p></div></div>
+      <div class="sample-card"><img src="images/sample4.jpg" alt="ベーカリー店主の表紙サンプル"><div><h3>ベーカリー店主・30代</h3><p>店頭ポスターやチラシにも使える、温かい一枚に。</p></div></div>
+    </div>
+    <p class="note">※サンプルはモデル写真で制作したイメージです。実際は、あなたご自身の写真からお作りします。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Quality</div>
+    <div class="underline"></div>
+    <h2>「AIで作った感」を、<br><span class="g">出さない</span>作り方</h2>
+    <p class="lead-c">最近はAIで誰でも画像が作れる時代です。でも、出来上がりを見ると「なんだか嘘っぽい」と感じるものも少なくありません。表紙のあなたは、作り方そのものが違います。</p>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <h3>よくあるAI画像</h3>
+        <ul>
+          <li>顔まで作り替えてしまい、本人らしくない</li>
+          <li>肌がツヤツヤで、実在感がない</li>
+          <li>日本語の文字が崩れたり、間違っていたりする</li>
+          <li>デザインが派手で、安っぽく見える</li>
+        </ul>
+      </div>
+      <div class="diff-card ours">
+        <h3>表紙のあなた</h3>
+        <ul>
+          <li>あなたの写真そのまま。顔は作り替えません</li>
+          <li>写真の空気感を残す、落ち着いた仕上げ</li>
+          <li>文字はデザインとして組み立てるので、一字一句正確</li>
+          <li>白と余白を活かした、本物の雑誌のような格</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#e8b4a0">How It Works</div>
+    <div class="underline"></div>
+    <h2>申し込みは、<span class="g">スマホだけ</span>で完了</h2>
+    <p class="lead-c">あなたがやることは、フォームの入力と写真選びだけです。</p>
+    <div class="step-grid">
+      <div class="step-card"><div class="step-num">STEP 01</div><h3>フォームから申し込む</h3><p>お名前、ご職業、ご希望プランを選ぶだけ。3分で終わります。</p></div>
+      <div class="step-card"><div class="step-num">STEP 02</div><h3>写真を送る</h3><p>メールでご案内する送り先へ、スマホの写真を1枚送ってください。写真選びに迷ったら相談もできます。</p></div>
+      <div class="step-card"><div class="step-num">STEP 03</div><h3>4案から選ぶ</h3><p>雰囲気の違うデザイン案をお見せします。お好きな案を選び、気になるところは2回まで無料で直します。</p></div>
+      <div class="step-card"><div class="step-num">STEP 04</div><h3>完成データを納品</h3><p>SNS用の画像データと、印刷できるPDFでお渡しします。名刺やポスターにも使えます。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="eyebrow">Pricing</div>
+    <div class="underline"></div>
+    <h2>料金は、<span class="g">3つ</span>だけ</h2>
+    <p class="lead-c">追加料金はかかりません。お支払い確認後に制作を始めます。</p>
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>単品プラン</h3>
+        <div class="price"><b>4,980</b> <small>円（税込）</small></div>
+        <ul><li>雑誌表紙風画像 1枚</li><li>デザイン案 4つから選択</li><li>修正 2回まで無料</li><li>SNS用データ＋印刷用PDF</li></ul>
+        <a class="btn btn-dark" href="https://docs.google.com/forms/d/e/1FAIpQLSfbwPeRzJfNkA_pz0ioiTk7EYZCAVoRFzUD9Z9ynBDdlcP6Bw/viewform" target="_blank" rel="noopener">このプランで申し込む</a>
+      </div>
+      <div class="price-card push">
+        <div class="badge">いちばん人気</div>
+        <h3>3点セット</h3>
+        <div class="price"><b>9,800</b> <small>円（税込）</small></div>
+        <ul><li>雑誌表紙風画像 1枚</li><li>表紙デザインの名刺データ</li><li>SNS投稿画像 3枚</li><li>デザイン案 4つから選択</li><li>修正 2回まで無料</li></ul>
+        <a class="btn btn-main" href="https://docs.google.com/forms/d/e/1FAIpQLSfbwPeRzJfNkA_pz0ioiTk7EYZCAVoRFzUD9Z9ynBDdlcP6Bw/viewform" target="_blank" rel="noopener">このプランで申し込む</a>
+      </div>
+      <div class="price-card">
+        <h3>月額プラン</h3>
+        <div class="price"><b>19,800</b> <small>円（税込）／月</small></div>
+        <ul><li>毎月 SNS投稿画像 8枚</li><li>表紙デザインの世界観で統一</li><li>季節のキャンペーン画像にも対応</li><li>いつでも解約できます</li></ul>
+        <a class="btn btn-dark" href="https://docs.google.com/forms/d/e/1FAIpQLSfbwPeRzJfNkA_pz0ioiTk7EYZCAVoRFzUD9Z9ynBDdlcP6Bw/viewform" target="_blank" rel="noopener">このプランで申し込む</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="eyebrow">FAQ</div>
+    <div class="underline"></div>
+    <h2>よくあるご質問</h2>
+    <div class="faq-list">
+      <div class="faq-item"><h3>写真はスマホで撮ったもので大丈夫ですか？</h3><p>大丈夫です。お店や仕事の現場で撮った自然な一枚がいちばん表紙らしくなります。暗い・小さい写真の場合は、別の写真をお願いすることがあります。</p></div>
+      <div class="faq-item"><h3>パソコンがありません。申し込めますか？</h3><p>はい。申し込みも写真を送るのも、すべてスマホでできます。</p></div>
+      <div class="faq-item"><h3>表紙の言葉は自分で考えるのですか？</h3><p>考えなくて大丈夫です。ご職業やお店のことを伺って、こちらで言葉をご提案します。入れたい言葉がある場合はフォームで教えてください。</p></div>
+      <div class="faq-item"><h3>納品までどのくらいかかりますか？</h3><p>写真とお支払いの確認後、最短3日、通常5日ほどでデザイン案をお見せします。</p></div>
+      <div class="faq-item"><h3>印刷もお願いできますか？</h3><p>印刷できるPDFデータをお渡ししますので、お近くの印刷サービスで印刷できます。名刺やポスターのサイズ指定もご相談ください。</p></div>
+      <div class="faq-item"><h3>支払い方法を教えてください。</h3><p>お申し込み後にメールでご案内します。銀行振込をご用意しています。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>あなたの仕事は、<br>表紙になる価値があります</h2>
+    <p>まずは写真1枚から。気に入らなければ、デザイン案の段階でお断りいただいても構いません。</p>
+    <a class="btn btn-main" href="https://docs.google.com/forms/d/e/1FAIpQLSfbwPeRzJfNkA_pz0ioiTk7EYZCAVoRFzUD9Z9ynBDdlcP6Bw/viewform" target="_blank" rel="noopener">写真を送って申し込む</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    表紙のあなた運営事務局<br>
+    お問い合わせはお申し込みフォームよりお願いいたします。制作事例の掲載は、お客様の許可をいただいた場合のみ行います。
+  </div>
+</footer>
+</body>
+</html>
