@@ -23,7 +23,7 @@ header{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:bl
 .logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .btn{display:inline-block;border-radius:999px;padding:13px 32px;font-weight:700;text-decoration:none;font-size:15px}
 .btn-main{background:var(--grad);color:#fff;box-shadow:0 10px 24px rgba(122,30,43,.25)}
-.btn-ghost{border:1.5px solid #fff;color:#fff}
+.btn-ghost{border:1.5px solid var(--ink);color:var(--ink);background:#fff}
 .btn-dark{border:1.5px solid var(--ink);color:var(--ink)}
 header .btn{padding:9px 24px;font-size:14px}
 section{padding:96px 0}
@@ -35,17 +35,22 @@ h2{font-size:38px;line-height:1.45;text-align:center;margin-top:20px;font-weight
 h2 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead-c{text-align:center;color:var(--gray);max-width:680px;margin:20px auto 0}
 /* hero */
-.hero{background:var(--dark);color:#fff;padding:84px 0 96px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.hero h1{font-size:50px;line-height:1.35;font-weight:800;margin-top:22px}
+.hero{background:#f4efe8;background-image:radial-gradient(#e2d7c6 1px,transparent 1.2px);background-size:22px 22px;color:var(--ink);padding:0 0 84px}
+.hero-band{background:var(--accent);color:#fff;text-align:center;font-size:13.5px;font-weight:700;letter-spacing:.05em;padding:10px 16px}
+.hero-top{text-align:center;max-width:780px;margin:0 auto;padding-top:64px}
+.hero h1{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:54px;line-height:1.4;font-weight:700;margin-top:22px}
 .hero h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{color:#d8cfd4;margin-top:24px;font-size:17px}
-.hero-cta{margin-top:36px;display:flex;gap:16px;flex-wrap:wrap}
-.hero-points{margin-top:28px;display:flex;gap:10px;flex-wrap:wrap}
-.hero-points span{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 16px;font-size:13px;color:#efe8eb}
-.hero-card{background:#fff;border-radius:20px;padding:14px;box-shadow:0 30px 60px rgba(0,0,0,.45)}
-.hero-card img{border-radius:12px}
-.hero-card p{color:var(--gray);font-size:13px;text-align:center;margin:10px 0 4px}
+.hero p{color:var(--gray);margin-top:24px;font-size:17px}
+.hero-cta{margin-top:36px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.hero-points{margin-top:28px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.hero-points span{border:1px solid #d8cbb8;background:#fff;border-radius:999px;padding:5px 16px;font-size:13px;color:var(--ink)}
+.hero-covers{display:flex;gap:22px;justify-content:center;align-items:flex-start;margin-top:52px}
+.hero-covers figure{width:29%;background:#fff;padding:10px;border-radius:14px;box-shadow:0 24px 44px rgba(28,20,40,.18)}
+.hero-covers figure.l{transform:rotate(-2deg)}
+.hero-covers figure.r{transform:rotate(2deg)}
+.hero-covers figure.mid{transform:translateY(-16px)}
+.hero-covers img{border-radius:8px}
+.hero-covers figcaption{color:var(--gray);font-size:12.5px;text-align:center;margin:9px 0 3px}
 /* samples */
 .samples{background:var(--bg-soft)}
 .sample-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:52px}
@@ -111,9 +116,12 @@ footer{padding:36px 0;text-align:center;color:var(--gray);font-size:13px}
 @media(max-width:860px){
   section{padding:64px 0}
   h2{font-size:29px}
-  .hero{padding:56px 0 64px}
-  .hero-grid{grid-template-columns:1fr;gap:36px}
-  .hero h1{font-size:36px}
+  .hero{padding:0 0 64px}
+  .hero-top{padding-top:44px}
+  .hero h1{font-size:34px}
+  .hero-covers{gap:10px;margin-top:36px}
+  .hero-covers figure{width:32%;padding:6px}
+  .hero-covers figcaption{font-size:10px}
   .sample-grid{grid-template-columns:1fr 1fr;gap:16px}
   .diff-grid,.price-grid,.cmp-grid{grid-template-columns:1fr}
   .step-grid{grid-template-columns:1fr 1fr;gap:14px}
@@ -130,11 +138,12 @@ footer{padding:36px 0;text-align:center;color:var(--gray);font-size:13px}
 </header>
 
 <div class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow left" style="color:#e8b4a0">Magazine Cover Service</div>
-      <div class="underline left"></div>
-      <h1>写真1枚で、<br>あなたが雑誌の<br><span class="g">表紙</span>になる。</h1>
+  <div class="hero-band">写真を送るだけ｜単品2,980円・デザイン案4つ・修正2回まで無料</div>
+  <div class="wrap">
+    <div class="hero-top">
+      <div class="eyebrow">Magazine Cover Service</div>
+      <div class="underline"></div>
+      <h1>写真1枚で、<br>あなたが雑誌の<span class="g">表紙</span>になる。</h1>
       <p>あなたがやることは、スマホで写真を1枚送るだけ。あなたの仕事や想いを、一枚の表紙に仕上げます。パソコンも、AIの知識もいりません。難しいことは、すべてこちらで。</p>
       <div class="hero-cta">
         <a class="btn btn-main" href="https://docs.google.com/forms/d/e/1FAIpQLSfbwPeRzJfNkA_pz0ioiTk7EYZCAVoRFzUD9Z9ynBDdlcP6Bw/viewform" target="_blank" rel="noopener">写真を送って申し込む</a>
@@ -144,10 +153,12 @@ footer{padding:36px 0;text-align:center;color:var(--gray);font-size:13px}
         <span>文字は一字一句正確</span><span>修正2回まで無料</span><span>最短3日で納品</span><span>デザイン案を見てから判断できます</span>
       </div>
     </div>
-    <div class="hero-card">
-      <img src="images/sample1.jpg" alt="ワインサロン店主の雑誌表紙サンプル">
-      <p>サンプル｜ワインサロン店主の表紙</p>
+    <div class="hero-covers">
+      <figure class="l"><img src="images/sample2.jpg" alt="美容サロンオーナーの雑誌表紙サンプル"><figcaption>美容サロンオーナー・40代</figcaption></figure>
+      <figure class="mid"><img src="images/sample1.jpg" alt="ワインサロン店主の雑誌表紙サンプル"><figcaption>ワインサロン店主・60代</figcaption></figure>
+      <figure class="r"><img src="images/sample4.jpg" alt="ベーカリー店主の雑誌表紙サンプル"><figcaption>ベーカリー店主・30代</figcaption></figure>
     </div>
+    <p class="note" style="margin-top:24px">※サンプルはモデル写真で制作したイメージです。実際は、あなたご自身の写真からお作りします。</p>
   </div>
 </div>
 
